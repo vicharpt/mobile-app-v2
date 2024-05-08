@@ -43,7 +43,7 @@ class PlayList extends StatelessWidget {
                       ),
                       SizedBox(height: 5),
                       Text(
-                        "30 songs",
+                        "30 musik",
                         style: TextStyle(
                             color: Colors.white.withOpacity(0.5), fontSize: 16),
                       ),

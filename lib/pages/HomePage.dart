@@ -10,6 +10,13 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  List<List> musics = [
+    ["Imagine Dragons - Believer", "Arnold", "", "03:30"],
+    ["Bang ucok pergi", "selmi", "", "03:30"],
+    ["Imagine Dragons - Believer", "Arnold", "", "03:30"],
+    ["Imagine Dragons - Believer", "Arnold", "", "03:30"],
+    ["Imagine Dragons - Believer", "Arnold", "", "03:30"],
+  ];
   TextEditingController search = TextEditingController();
   @override
   Widget build(BuildContext context) {
@@ -26,39 +33,14 @@ class _HomePageState extends State<HomePage> {
             ])),
         child: Scaffold(
           backgroundColor: Colors.transparent,
-          body: SafeArea(
-              child: Padding(
-            padding: EdgeInsets.only(top: 20, left: 22, right: 22),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    InkWell(
-                      onTap: () {},
-                      child: Icon(
-                        Icons.sort_rounded,
-                        color: Color(0xFF899CCF),
-                        size: 30,
-                      ),
-                    ),
-                    InkWell(
-                      onTap: () {},
-                      child: Icon(
-                        Icons.more_vert,
-                        color: Color(0xFF899CCF),
-                        size: 30,
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 30,
-                ),
-                Padding(
-                  padding: EdgeInsets.only(bottom: 5),
+          appBar: PreferredSize(
+            preferredSize: Size.fromHeight(90),
+            child: Padding(
+              padding: EdgeInsets.fromLTRB(5, 30, 20, 0),
+              child: AppBar(
+                backgroundColor: Colors.transparent,
+                title: Padding(
+                  padding: EdgeInsets.only(bottom: 0),
                   child: Text(
                     "VICHARPT",
                     style: TextStyle(
@@ -69,6 +51,27 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                 ),
+                actions: [
+                  InkWell(
+                    onTap: () {},
+                    child: Icon(
+                      Icons.more_vert,
+                      color: Color(0xFF899CCF),
+                      size: 30,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          body: SafeArea(
+              child: Padding(
+            padding: EdgeInsets.only(top: 20, left: 22, right: 22),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                SizedBox(height: 15),
                 Padding(
                   padding: EdgeInsets.only(bottom: 5),
                   child: Text(
@@ -123,8 +126,8 @@ class _HomePageState extends State<HomePage> {
                 TabBar(
                   isScrollable: false,
                   indicatorWeight: 8,
-                  labelStyle: TextStyle(
-                      fontSize: 18, color: Colors.white.withOpacity(0.6)),
+                  unselectedLabelColor: Color(0xFF31314F),
+                  labelStyle: TextStyle(fontSize: 18, color: Color(0xFF899CCF)),
                   indicator: BoxDecoration(
                       border: Border(
                           bottom:
@@ -159,12 +162,12 @@ class _HomePageState extends State<HomePage> {
                 ),
                 Flexible(
                     child: TabBarView(children: [
-                  MusicList(),
+                  MusicList(musics),
                   PlayList(),
-                  MusicList(),
-                  MusicList(),
-                  MusicList(),
-                  MusicList(),
+                  MusicList(musics),
+                  MusicList(musics),
+                  MusicList(musics),
+                  MusicList(musics),
                 ]))
               ],
             ),
