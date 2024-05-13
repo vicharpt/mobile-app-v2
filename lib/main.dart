@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:vicharpt/pages/HomePage.dart';
 import 'package:vicharpt/pages/MusicPage.dart';
-import 'package:vicharpt/pages/PlayListPage.dart';
+import 'package:vicharpt/pages/NewsPage.dart';
+import 'package:vicharpt/pages/MusicSavedPage.dart';
 
 void main() => runApp(MyApp());
 
@@ -12,8 +13,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routes: {
         "/": (context) => HomePage(),
-        "playlistPage": (context) => PlayListPage(),
-        "musicPage": (context) => MusicPage()
+        "musicPage": (context) => MusicPage(),
+        "musicSavedPage": (context) => MusicSavedPage(),
+        "newsPage":(context) => NewsPage()
       },
     );
   }

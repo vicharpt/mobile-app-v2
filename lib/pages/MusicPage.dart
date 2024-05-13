@@ -27,7 +27,7 @@ class MusicPage extends StatelessWidget {
             child: Column(
               children: [
                 Padding(
-                  padding: EdgeInsets.symmetric(vertical: 45, horizontal: 25),
+                  padding: EdgeInsets.symmetric(vertical: 30, horizontal: 25),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -117,7 +117,7 @@ class MusicPage extends StatelessWidget {
                           )
                         ],
                       ),
-                      SizedBox(height: 30),
+                      SizedBox(height: 5),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
@@ -126,8 +126,8 @@ class MusicPage extends StatelessWidget {
                               color: Colors.white, size: 30),
                           Container(
                             alignment: Alignment.center,
-                            height: 55,
-                            width: 55,
+                            height: 45,
+                            width: 45,
                             decoration: BoxDecoration(
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(30)),

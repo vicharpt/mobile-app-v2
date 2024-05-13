@@ -56,7 +56,7 @@ class _HomePageState extends State<HomePage> {
                     onTap: () {},
                     child: Icon(
                       Icons.more_vert,
-                      color: Color(0xFF899CCF),
+                      color: Colors.white.withOpacity(0.9),
                       size: 30,
                     ),
                   ),
@@ -86,7 +86,7 @@ class _HomePageState extends State<HomePage> {
                   padding: EdgeInsets.only(top: 15, bottom: 10),
                   child: Container(
                     height: 50,
-                    width: 380,
+                    width: MediaQuery.of(context).size.width,
                     decoration: BoxDecoration(
                         color: Color(0xFF31314F),
                         borderRadius: BorderRadius.circular(8)),
@@ -98,8 +98,8 @@ class _HomePageState extends State<HomePage> {
                             horizontal: 20,
                           ),
                           height: 50,
-                          width: 200,
-                          child: TextFormField(
+                          width: MediaQuery.of(context).size.width - 145,
+                          child: TextField(
                             onChanged: (value) => {setState(() {})},
                             controller: search,
                             style:
@@ -163,11 +163,10 @@ class _HomePageState extends State<HomePage> {
                 Flexible(
                     child: TabBarView(children: [
                   MusicList(musics),
+                  MusicList(musics),
+                  MusicList(musics),
+                  MusicList(musics),
                   PlayList(),
-                  MusicList(musics),
-                  MusicList(musics),
-                  MusicList(musics),
-                  MusicList(musics),
                 ]))
               ],
             ),

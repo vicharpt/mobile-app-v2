@@ -18,7 +18,7 @@ class PlayList extends StatelessWidget {
                 children: [
                   InkWell(
                     onTap: () {
-                      Navigator.pushNamed(context, "playlistPage");
+                      Navigator.pushNamed(context, "musicSavedPage");
                     },
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(10),

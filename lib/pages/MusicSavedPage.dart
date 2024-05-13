@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:vicharpt/widgets/MusicList.dart';
 
-class PlayListPage extends StatelessWidget {
+class MusicSavedPage extends StatelessWidget {
   List<List> musics = [
     ["Imagine Dragons - Believer", "Arnold", "", "03:30"],
     ["Imagine Dragons - Believer", "Arnold", "", "03:30"],
@@ -90,12 +90,12 @@ class PlayListPage extends StatelessWidget {
               ),
               SizedBox(height: 30),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   InkWell(
                     onTap: () {},
                     child: Container(
-                      width: 170,
+                      width: 150,
                       height: 55,
                       decoration: BoxDecoration(
                           color: Colors.white,
@@ -124,7 +124,7 @@ class PlayListPage extends StatelessWidget {
                   InkWell(
                     onTap: () {},
                     child: Container(
-                      width: 170,
+                      width: 150,
                       height: 55,
                       decoration: BoxDecoration(
                           color: Color(0xFF30314D).withOpacity(0.6),
