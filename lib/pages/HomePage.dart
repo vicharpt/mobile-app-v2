@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vicharpt/api/MusicsApi.dart';
 import 'package:vicharpt/widgets/MusicList.dart';
 import 'package:vicharpt/widgets/PlayList.dart';
 
@@ -10,13 +11,14 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List<List> musics = [
-    ["Imagine Dragons - Believer", "Arnold", "", "03:30"],
-    ["Bang ucok pergi", "selmi", "", "03:30"],
-    ["Imagine Dragons - Believer", "Arnold", "", "03:30"],
-    ["Imagine Dragons - Believer", "Arnold", "", "03:30"],
-    ["Imagine Dragons - Believer", "Arnold", "", "03:30"],
-  ];
+  // List<List> musics = [
+  //   ["Imagine Dragons - Believer", "Arnold", "", "03:30"],
+  //   ["Bang ucok pergi", "selmi", "", "03:30"],
+  //   ["Imagine Dragons - Believer", "Arnold", "", "03:30"],
+  //   ["Imagine Dragons - Believer", "Arnold", "", "03:30"],
+  //   ["Imagine Dragons - Believer", "Arnold", "", "03:30"],
+  // ];
+  final musics = MusicApi();
   TextEditingController search = TextEditingController();
   @override
   Widget build(BuildContext context) {
@@ -162,10 +164,10 @@ class _HomePageState extends State<HomePage> {
                 ),
                 Flexible(
                     child: TabBarView(children: [
-                  MusicList(musics),
-                  MusicList(musics),
-                  MusicList(musics),
-                  MusicList(musics),
+                  MusicList(musics.getMusics()),
+                  MusicList(musics.getMusicTrends()),
+                  MusicList(musics.getMusics()),
+                  MusicList(musics.getMusics()),
                   PlayList(),
                 ]))
               ],

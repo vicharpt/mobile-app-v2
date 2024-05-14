@@ -7,7 +7,7 @@ class MusicPage extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage("foto-album.jpg"), fit: BoxFit.cover)),
+              image: AssetImage("assets/foto-album.jpg"), fit: BoxFit.cover)),
       child: Scaffold(
         backgroundColor: Colors.transparent,
         body: Container(
@@ -27,7 +27,7 @@ class MusicPage extends StatelessWidget {
             child: Column(
               children: [
                 Padding(
-                  padding: EdgeInsets.symmetric(vertical: 30, horizontal: 25),
+                  padding: EdgeInsets.symmetric(vertical: 40, horizontal: 25),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [

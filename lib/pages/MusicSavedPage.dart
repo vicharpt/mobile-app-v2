@@ -1,20 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:vicharpt/api/MusicsApi.dart';
 import 'package:vicharpt/widgets/MusicList.dart';
 
 class MusicSavedPage extends StatelessWidget {
-  List<List> musics = [
-    ["Imagine Dragons - Believer", "Arnold", "", "03:30"],
-    ["Imagine Dragons - Believer", "Arnold", "", "03:30"],
-    ["Imagine Dragons - Believer", "Arnold", "", "03:30"],
-    ["Imagine Dragons - Believer", "Arnold", "", "03:30"],
-    ["Imagine Dragons - Believer", "Arnold", "", "03:30"],
-    ["Imagine Dragons - Believer", "Arnold", "", "03:30"],
-    ["Imagine Dragons - Believer", "Arnold", "", "03:30"],
-    ["Imagine Dragons - Believer", "Arnold", "", "03:30"],
-    ["Imagine Dragons - Believer", "Arnold", "", "03:30"],
-    ["Imagine Dragons - Believer", "Arnold", "", "03:30"],
-  ];
+  final musics = MusicApi();
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -64,7 +54,7 @@ class MusicSavedPage extends StatelessWidget {
               ClipRRect(
                 borderRadius: BorderRadius.circular(20),
                 child: Image.asset(
-                  "foto-album.jpg",
+                  "assets/foto-album.jpg",
                   width: 250,
                   height: 260,
                   fit: BoxFit.cover,
@@ -155,7 +145,7 @@ class MusicSavedPage extends StatelessWidget {
               SizedBox(height: 20),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 15),
-                child: MusicList(musics),
+                child: MusicList(musics.getMusicTrends()),
               )
             ],
           ),

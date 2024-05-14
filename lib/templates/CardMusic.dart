@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class CardMusic extends StatelessWidget {
+class CardMusic extends StatefulWidget {
   const CardMusic({
     super.key,
     required this.serialNumber,
@@ -10,11 +10,18 @@ class CardMusic extends StatelessWidget {
     required this.time,
   });
 
-  final String serialNumber;
-  final String title;
-  final String artis;
-  final String music;
-  final String time;
+  final String serialNumber, title, artis, music, time;
+
+  @override
+  State<CardMusic> createState() =>
+      _CardMusicState(serialNumber, title, artis, music, time);
+}
+
+class _CardMusicState extends State<CardMusic> {
+  _CardMusicState(
+      this.serialNumber, this.title, this.artis, this.music, this.time);
+  final String serialNumber, title, artis, music, time;
+  IconData icon = Icons.play_arrow;
 
   @override
   Widget build(BuildContext context) {
@@ -84,14 +91,24 @@ class CardMusic extends StatelessWidget {
               color: Colors.white,
               borderRadius: BorderRadius.circular(30),
             ),
-            child: Icon(
-              Icons.play_arrow,
-              size: 25,
-              color: Color(0xFF31314F),
+            child: InkWell(
+              onTap: () {
+                setState(() {
+                  icon = icon == Icons.play_arrow
+                      ? icon = Icons.pause
+                      : icon = Icons.play_arrow;
+                });
+              },
+              child: Icon(
+                icon,
+                size: 25,
+                color: Color(0xFF31314F),
+              ),
             ),
           ),
         ],
       ),
     );
+    ;
   }
 }
